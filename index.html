@@ -10,15 +10,15 @@
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <div id="my_dataviz">
-        
+    <div id="container">
+        <div id="my_dataviz"></div>
+        <svg id="map" width="960" height="600"></svg>
     </div>
-    <svg id="map" width="960" height="600"></svg>
     <script>
         // set the dimensions and margins of the graph
-        var margin = {top: 20, right: 30, bottom: 280, left: 30},
-        width = 1650 - margin.left - margin.right,
-        height = 450 - margin.top - margin.bottom;
+        var margin = {top: 20, right: 30, bottom: 180, left: 30},
+        width = 1600 - margin.left - margin.right,
+        height = 370 - margin.top - margin.bottom;
 
         // append the svg object to the body of the page
         var svg = d3.select("#my_dataviz")

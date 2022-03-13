@@ -1,6 +1,12 @@
-.states :hover {
-  fill: red;
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+/* .states :hover {
+  fill: red;
+} */
 
 .state-borders {
   fill: none;
