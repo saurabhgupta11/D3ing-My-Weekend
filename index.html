@@ -7,6 +7,9 @@
     <title>Document</title>
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="https://d3js.org/topojson.v2.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
@@ -564,7 +567,7 @@
                         }
                     })
                     stateIdsToBeHighlighted.forEach((stateId, index) => {
-                        d3.select(`#state-${stateId}`).style('fill', 'red')
+                        d3.select(`#state-${stateId}`).style('fill', '#85d585')
                     })
                 // Highlight the connections
                 links
@@ -578,21 +581,21 @@
                 .style('stroke-width', '1')
                 // Un - Highlight on the map
                 stateIdsToBeHighlighted.forEach((stateId, index) => {
-                    d3.select(`#state-${stateId}`).style('fill', 'black')
+                    d3.select(`#state-${stateId}`).style('fill', 'lightgrey')
                 })
                 stateIdsToBeHighlighted = []
             })
         })
 
         // text hover nodes
-        svg
-        .append("text")
-            .attr("text-anchor", "middle")
-            .style("fill", "#B8B8B8")
-            .style("font-size", "17px")
-            .attr("x", 50)
-            .attr("y", 10)
-            .html("Hover nodes")
+        // svg
+        // .append("text")
+        //     .attr("text-anchor", "middle")
+        //     .style("fill", "#B8B8B8")
+        //     .style("font-size", "17px")
+        //     .attr("x", 50)
+        //     .attr("y", 10)
+        //     .html("Hover nodes")
 
     </script>
     <script>
@@ -608,6 +611,7 @@
                 .data(topojson.feature(us, us.objects.states).features)
                 .enter().append("path")
                 .attr("d", path)
+                .attr("fill", "lightgrey")
                 .attr("id", d => `state-${d.id}`)
                 .on('mouseover', function (d) {
                     console.log(d)

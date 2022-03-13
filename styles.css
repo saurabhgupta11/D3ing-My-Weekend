@@ -1,12 +1,16 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
 #container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* .states :hover {
-  fill: red;
-} */
+#my_dataviz circle {
+  cursor: pointer;
+}
 
 .state-borders {
   fill: none;
