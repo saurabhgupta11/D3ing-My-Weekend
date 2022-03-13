@@ -1,0 +1,34 @@
+{
+    "nodes": [
+        {
+            "id": 1,
+            "name": "Alabama"
+        },
+        {
+            "id": 38,
+            "name": "North Dakota"
+        },
+        {
+            "id": 36,
+            "name": "New York"
+        },
+        {
+            "id": 35,
+            "name": "New Mexico"
+        }
+    ],
+    "links": [
+        {
+            "source": 38,
+            "target": 36
+        },
+        {
+            "source": 38,
+            "target": 35
+        },
+        {
+            "source": 36,
+            "target": 35
+        }
+    ]
+}
