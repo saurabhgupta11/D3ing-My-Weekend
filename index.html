@@ -500,11 +500,15 @@
             .range([0, width])
             .domain(allNodes)
 
-        // Add the circle for the nodes
-        var nodes = svg
-            .selectAll("mynodes")
+        var gNodesLabels = svg
+            .selectAll("g")
             .data(data.nodes)
             .enter()
+            .append("g")
+            .attr("class", "nodeLabelgroup")
+        
+        // Add the circle for the nodes
+        var nodes = gNodesLabels
             .append("circle")
             .attr("cx", function(d){ return(x(d.name))})
             .attr("cy", height-30)
@@ -512,10 +516,7 @@
             .style("fill", "#69b3a2")
 
         // And give them a label
-        var labels = svg
-            .selectAll("mylabels")
-            .data(data.nodes)
-            .enter()
+        var labels = gNodesLabels
             .append("text")
             .attr("x", function(d){ return(x(d.name))})
             .attr("y", height-10)
@@ -553,12 +554,12 @@
             .attr("stroke", "black")
 
             // Add the highlighting functionality
-            nodes
+            gNodesLabels
             .on('mouseover', function (d) {
                 console.log(d)
                 // Highlight the nodes: every node is green except of him
                 nodes.style('fill', "#B8B8B8")
-                d3.select(this).style('fill', '#69b3b2')
+                d3.select(this.firstElementChild).style('fill', '#69b3b2')
                 // Highlight on the map
                     // find all the target and sources from links that start with the same name
                     data.nodes.forEach(n => {

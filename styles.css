@@ -8,7 +8,7 @@ body {
   align-items: center;
 }
 
-#my_dataviz circle {
+.nodeLabelgroup {
   cursor: pointer;
 }
 
